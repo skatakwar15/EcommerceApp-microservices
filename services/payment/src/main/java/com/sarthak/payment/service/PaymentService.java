@@ -6,11 +6,12 @@ import com.sarthak.payment.model.PaymentNotificationRequest;
 import com.sarthak.payment.model.PaymentRequest;
 import com.sarthak.payment.repository.PaymentRepository;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class PaymentService {
 
     private PaymentRepository paymentRepository;

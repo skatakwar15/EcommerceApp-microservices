@@ -10,12 +10,14 @@ import com.sarthak.order.model.*;
 import com.sarthak.order.repository.OrderRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class OrderService {
 
     private CustomerClient customerClient;

@@ -4,13 +4,14 @@ import com.sarthak.order.entity.OrderLine;
 import com.sarthak.order.model.OrderLineRequest;
 import com.sarthak.order.model.OrderLineResponse;
 import com.sarthak.order.repository.OrderLineRepository;
+import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class OrderLineService {
 
     private OrderLineRepository orderLineRepository;

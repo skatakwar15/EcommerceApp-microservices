@@ -11,7 +11,6 @@ public class OrderMapper {
     public Order toOrder(@Valid OrderRequest request) {
         return Order
                 .builder()
-                .id(request.id())
                 .customerId(request.customerId())
                 .reference(request.reference())
                 .totalAmount(request.amount())

@@ -22,7 +22,10 @@ public class NotificationConsumer {
 
     private final EmailService emailService;
 
-    @KafkaListener(topics = "payment-topic", groupId = "paymentGroup")
+    @KafkaListener(
+            topics = "payment-topic",
+            groupId = "paymentGroup",
+            containerFactory = "paymentKafkaListenerContainerFactory")
     public void consumePaymentSuccessNotification(PaymentConfirmation paymentConfirmation) throws MessagingException {
         log.info("Consuming the message from Payment-topic: <{}>", paymentConfirmation);
 
@@ -43,7 +46,11 @@ public class NotificationConsumer {
                 paymentConfirmation.orderReference());
     }
 
-    @KafkaListener(topics = "order-topic", groupId = "orderGroup")
+    @KafkaListener(
+            topics = "order-topic",
+            groupId = "orderGroup",
+            containerFactory = "orderKafkaListenerContainerFactory"
+    )
     public void consumeOrderConfirmationNotification(OrderConfirmation orderConfirmation) throws MessagingException {
         log.info("Consuming the message from order-topic: <{}>", orderConfirmation);
 
